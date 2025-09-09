@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROSA - Sophisticated Women's Fashion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #faf8f6 0%, #f5f1ed 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .rose-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            opacity: 0;
+            animation: bloomIn 2s ease-out 0.5s forwards;
+            filter: drop-shadow(0 4px 12px rgba(139, 69, 19, 0.1));
+        }
+
+        .brand-name {
+            font-size: 4.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: letterSpacing 2s ease-out 1s forwards;
+            text-shadow: 0 2px 4px rgba(139, 69, 19, 0.1);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #6b5b73;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.8s forwards;
+            font-style: italic;
+        }
+
+        .coming-soon {
+            background: linear-gradient(45deg, #d4af37, #b8860b);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 2.2s forwards;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .coming-soon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(45deg, #b8860b, #d4af37);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bloomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes letterSpacing {
+            from {
+                opacity: 0;
+                letter-spacing: 0.1em;
+            }
+            to {
+                opacity: 1;
+                letter-spacing: 0.3em;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Floating rose petals background effect */
+        .petal {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(219, 112, 147, 0.3);
+            border-radius: 50% 0;
+            animation: float 15s infinite linear;
+            pointer-events: none;
+        }
+
+        .petal:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .petal:nth-child(2) { left: 20%; animation-delay: -2s; }
+        .petal:nth-child(3) { left: 30%; animation-delay: -4s; }
+        .petal:nth-child(4) { left: 40%; animation-delay: -6s; }
+        .petal:nth-child(5) { left: 50%; animation-delay: -8s; }
+        .petal:nth-child(6) { left: 60%; animation-delay: -10s; }
+        .petal:nth-child(7) { left: 70%; animation-delay: -12s; }
+        .petal:nth-child(8) { left: 80%; animation-delay: -14s; }
+        .petal:nth-child(9) { left: 90%; animation-delay: -16s; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brand-name {
+                font-size: 3rem;
+                letter-spacing: 0.2em;
+            }
+            .rose-logo {
+                width: 100px;
+                height: 100px;
+            }
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating petals background -->
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+
+    <div class="container">
+        <!-- Rose SVG Logo -->
+        <svg class="rose-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <radialGradient id="roseGradient" cx="50%" cy="30%" r="70%">
+                    <stop offset="0%" style="stop-color:#f4c2c2"/>
+                    <stop offset="50%" style="stop-color:#e6819a"/>
+                    <stop offset="100%" style="stop-color:#c8577a"/>
+                </radialGradient>
+                <radialGradient id="petalGradient" cx="30%" cy="30%" r="80%">
+                    <stop offset="0%" style="stop-color:#f0a0b0"/>
+                    <stop offset="70%" style="stop-color:#db7093"/>
+                    <stop offset="100%" style="stop-color:#b84d6f"/>
+                </radialGradient>
+            </defs>
+
+            <!-- Rose bloom - more natural layered approach -->
+            <g transform="translate(100,90)">
+                <!-- Outermost petals -->
+                <path d="M-35,5 C-50,-10 -45,-35 -25,-40 C-5,-35 5,-25 0,-10 C-10,0 -25,5 -35,5Z"
+                      fill="url(#petalGradient)" opacity="0.9" transform="rotate(0)"/>
+                <path d="M-35,5 C-50,-10 -45,-35 -25,-40 C-5,-35 5,-25 0,-10 C-10,0 -25,5 -35,5Z"
+                      fill="url(#petalGradient)" opacity="0.8" transform="rotate(72)"/>
+                <path d="M-35,5 C-50,-10 -45,-35 -25,-40 C-5,-35 5,-25 0,-10 C-10,0 -25,5 -35,5Z"
+                      fill="url(#petalGradient)" opacity="0.85" transform="rotate(144)"/>
+                <path d="M-35,5 C-50,-10 -45,-35 -25,-40 C-5,-35 5,-25 0,-10 C-10,0 -25,5 -35,5Z"
+                      fill="url(#petalGradient)" opacity="0.75" transform="rotate(216)"/>
+                <path d="M-35,5 C-50,-10 -45,-35 -25,-40 C-5,-35 5,-25 0,-10 C-10,0 -25,5 -35,5Z"
+                      fill="url(#petalGradient)" opacity="0.8" transform="rotate(288)"/>
+
+                <!-- Middle layer petals -->
+                <path d="M-25,3 C-35,-8 -32,-25 -18,-28 C-5,-25 2,-18 0,-8 C-6,-2 -18,3 -25,3Z"
+                      fill="url(#petalGradient)" opacity="0.9" transform="rotate(36)"/>
+                <path d="M-25,3 C-35,-8 -32,-25 -18,-28 C-5,-25 2,-18 0,-8 C-6,-2 -18,3 -25,3Z"
+                      fill="url(#petalGradient)" opacity="0.85" transform="rotate(108)"/>
+                <path d="M-25,3 C-35,-8 -32,-25 -18,-28 C-5,-25 2,-18 0,-8 C-6,-2 -18,3 -25,3Z"
+                      fill="url(#petalGradient)" opacity="0.9" transform="rotate(180)"/>
+                <path d="M-25,3 C-35,-8 -32,-25 -18,-28 C-5,-25 2,-18 0,-8 C-6,-2 -18,3 -25,3Z"
+                      fill="url(#petalGradient)" opacity="0.8" transform="rotate(252)"/>
+                <path d="M-25,3 C-35,-8 -32,-25 -18,-28 C-5,-25 2,-18 0,-8 C-6,-2 -18,3 -25,3Z"
+                      fill="url(#petalGradient)" opacity="0.85" transform="rotate(324)"/>
+
+                <!-- Inner petals -->
+                <path d="M-15,2 C-22,-5 -20,-16 -12,-18 C-4,-16 0,-12 0,-6 C-3,-2 -10,2 -15,2Z"
+                      fill="url(#roseGradient)" transform="rotate(0)"/>
+                <path d="M-15,2 C-22,-5 -20,-16 -12,-18 C-4,-16 0,-12 0,-6 C-3,-2 -10,2 -15,2Z"
+                      fill="url(#roseGradient)" transform="rotate(60)"/>
+                <path d="M-15,2 C-22,-5 -20,-16 -12,-18 C-4,-16 0,-12 0,-6 C-3,-2 -10,2 -15,2Z"
+                      fill="url(#roseGradient)" transform="rotate(120)"/>
+                <path d="M-15,2 C-22,-5 -20,-16 -12,-18 C-4,-16 0,-12 0,-6 C-3,-2 -10,2 -15,2Z"
+                      fill="url(#roseGradient)" transform="rotate(180)"/>
+                <path d="M-15,2 C-22,-5 -20,-16 -12,-18 C-4,-16 0,-12 0,-6 C-3,-2 -10,2 -15,2Z"
+                      fill="url(#roseGradient)" transform="rotate(240)"/>
+                <path d="M-15,2 C-22,-5 -20,-16 -12,-18 C-4,-16 0,-12 0,-6 C-3,-2 -10,2 -15,2Z"
+                      fill="url(#roseGradient)" transform="rotate(300)"/>
+
+                <!-- Center bud -->
+                <circle cx="0" cy="-8" r="6" fill="#c8577a"/>
+                <circle cx="0" cy="-8" r="3" fill="#b84d6f"/>
+            </g>
+
+            <!-- Elegant stem -->
+            <path d="M100,120 Q98,140 100,160 Q102,180 100,200" stroke="#8b7355" stroke-width="3" fill="none"/>
+
+            <!-- Refined leaves -->
+            <path d="M95,145 Q85,140 82,150 Q85,160 95,155 Q100,152 95,145Z" fill="#7a8450"/>
+            <path d="M105,165 Q115,160 118,170 Q115,180 105,175 Q100,172 105,165Z" fill="#7a8450"/>
+        </svg>
+
+        <h1 class="brand-name">ROSA</h1>
+        <p class="tagline">Sophisticated Fashion for the Modern Woman</p>
+    </div>
+</body>
+</html>
